@@ -58,7 +58,7 @@ It combines a **Python backend** (for generating and cleaning realistic sales da
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/TADSTech/salesscope.git
+git clone https://github.com/TADSTech/sales-scope.git
 cd salesscope
 ````
 
