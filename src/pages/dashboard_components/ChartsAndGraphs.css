@@ -1,0 +1,81 @@
+.chart-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .chart-card {
+  background-color: #1e293b;
+  border-color: #4b5563;
+}
+
+.chart-toggle {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.chart-toggle[data-variant="outline"] {
+  background-color: transparent;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+}
+
+.dark .chart-toggle[data-variant="outline"] {
+  border-color: #4b5563;
+  color: #e2e8f0;
+}
+
+.chart-toggle:hover {
+  background-color: #1e40af;
+}
+
+.chart-toggle[data-variant="outline"]:hover {
+  background-color: #e2e8f0;
+}
+
+.dark .chart-toggle[data-variant="outline"]:hover {
+  background-color: #4b5563;
+}
+
+/* Ensure text is visible in dark mode */
+.text-foreground {
+  color: #1e293b;
+}
+
+.dark .text-foreground {
+  color: #e2e8f0;
+}
+
+.text-muted-foreground {
+  color: #64748b;
+}
+
+.dark .text-muted-foreground {
+  color: #94a3b8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .chart-card {
+    padding: 1.5rem;
+  }
+
+  .chart-card .text-2xl {
+    font-size: 1.5rem;
+  }
+
+  .chart-container {
+    min-height: 300px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .chart-container {
+    min-height: 500px !important;
+  }
+}

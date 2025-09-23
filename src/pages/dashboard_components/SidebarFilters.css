@@ -1,0 +1,27 @@
+.sidebar-card {
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+.sidebar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar-card {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.sheet-content .sidebar-filters-mobile {
+  padding: 0;
+}
+
+.sheet-content .sidebar-filters-mobile .space-y-4 > * {
+  margin-bottom: 1rem;
+}

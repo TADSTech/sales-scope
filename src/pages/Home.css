@@ -1,0 +1,51 @@
+.title .highlight {
+  color: hsl(var(--primary));
+  background: linear-gradient(180deg, transparent 65%, hsl(var(--primary) / 0.2) 65%);
+  transition: color 0.3s ease;
+}
+
+.title .highlight:hover {
+  color: hsl(var(--primary) / 0.85);
+}
+
+.feature-card,
+.insight-card {
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover,
+.insight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .feature-card,
+  .insight-card {
+    padding: 1rem;
+  }
+
+  .feature-card .text-xl,
+  .insight-card .text-xl {
+    font-size: 1.125rem;
+  }
+
+  .feature-card .text-sm,
+  .insight-card .text-sm {
+    font-size: 0.875rem;
+  }
+}

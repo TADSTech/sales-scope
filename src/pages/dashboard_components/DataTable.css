@@ -1,0 +1,34 @@
+.data-table-card {
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+.data-table-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+  background-color: hsl(var(--muted));
+}
+
+.table-row:hover {
+  background-color: hsl(var(--muted) / 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .data-table-card {
+    padding: 1rem;
+  }
+
+  .data-table-card .text-xl {
+    font-size: 1.125rem;
+  }
+
+  .table-cell {
+    font-size: 0.875rem;
+  }
+}

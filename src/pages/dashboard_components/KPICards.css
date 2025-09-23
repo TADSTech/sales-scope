@@ -1,0 +1,202 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.kpi-cards-container {
+  padding: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.kpi-card {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-width: 0; /* Prevent card from expanding beyond container */
+  display: flex;
+  flex-direction: column;
+}
+
+.dark .kpi-card {
+  box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.3);
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.kpi-card .card-header {
+  padding: 0.75rem 1rem;
+  flex-shrink: 0;
+}
+
+.kpi-card .card-content {
+  padding: 0 1rem 1rem;
+  flex-grow: 1;
+  overflow: hidden; /* Ensure content doesn't overflow card */
+}
+
+/* Common border styles for all cards */
+.kpi-card {
+  border-left: 4px solid;
+  border-right: 2px solid hsl(var(--border));
+  border-top: 2px solid hsl(var(--border));
+  border-bottom: 2px solid hsl(var(--border));
+}
+
+/* Specific border colors */
+.kpi-card.sales { border-left-color: hsl(var(--primary)); }
+.kpi-card.profit { border-left-color: oklch(0.646 0.222 141.116); }
+.kpi-card.orders { border-left-color: oklch(0.627 0.265 303.9); }
+.kpi-card.discount { border-left-color: oklch(0.769 0.188 70.08); }
+.kpi-card.region { border-left-color: oklch(0.6 0.118 184.704); }
+
+/* Dark mode adjustments */
+.dark .kpi-card.profit { border-left-color: oklch(0.696 0.17 162.48); }
+.dark .kpi-card.orders { border-left-color: oklch(0.488 0.243 264.376); }
+.dark .kpi-card.region { border-left-color: oklch(0.645 0.246 16.439); }
+
+/* Text truncation for specific elements */
+.kpi-card .text-sm,
+.kpi-card .text-xs {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Allow wrapping for main values in Total Sales and Total Profit */
+.kpi-card.sales .card-content .text-xl,
+.kpi-card.sales .card-content .text-2xl,
+.kpi-card.profit .card-content .text-xl,
+.kpi-card.profit .card-content .text-2xl {
+  white-space: normal; /* Allow wrapping for full visibility */
+  overflow: visible; /* Ensure no clipping */
+  word-break: break-all; /* Break long numbers if necessary */
+}
+
+/* Mobile-first responsive design */
+/* Base mobile styles (default) */
+.kpi-cards-container {
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.kpi-card {
+  min-height: 100px;
+  margin-bottom: 0.5rem;
+  flex: 1 1 100%; /* Full width on mobile */
+}
+
+.kpi-card .card-header {
+  padding: 0.5rem 0.75rem;
+}
+
+.kpi-card .card-content {
+  padding: 0 0.75rem 0.75rem;
+}
+
+.kpi-card .text-xl { font-size: 1.25rem; }
+.kpi-card .text-sm { font-size: 0.75rem; }
+.kpi-card .text-xs { font-size: 0.65rem; }
+.kpi-card .h-4, .kpi-card .w-4 {
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+/* Small tablets and larger phones */
+@media (min-width: 481px) {
+  .kpi-card {
+    flex: 1 1 calc(50% - 0.5rem); /* 2 columns */
+  }
+}
+
+/* Tablets */
+@media (min-width: 641px) {
+  .kpi-cards-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .kpi-card {
+    flex: 1 1 calc(50% - 1rem); /* 2 columns with proper gap */
+    margin-bottom: 1rem;
+  }
+  
+  .kpi-card .card-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .kpi-card .card-content {
+    padding: 0 1rem 1rem;
+  }
+  
+  .kpi-card .text-xl { font-size: 1.5rem; }
+  .kpi-card .text-sm { font-size: 0.875rem; }
+  .kpi-card .h-4, .kpi-card .w-4 {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .kpi-cards-container {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+  
+  .kpi-card {
+    flex: 1 1 calc(20% - 1.25rem); /* 5 columns for desktop */
+    min-height: 140px; /* Increased height to accommodate wrapping */
+    margin-bottom: 0;
+  }
+  
+  .kpi-card .card-header {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .kpi-card .card-content {
+    padding: 0 0.75rem 0.75rem;
+  }
+  
+  .kpi-card .text-xl { font-size: 1.125rem; } /* Smaller font for desktop */
+  .kpi-card .text-2xl { font-size: 1.25rem; } /* Adjusted for wrapping */
+  .kpi-card .text-sm { font-size: 0.75rem; }
+  .kpi-card .text-xs { font-size: 0.625rem; }
+  .kpi-card .h-4, .kpi-card .w-4 {
+    height: 0.875rem;
+    width: 0.875rem;
+  }
+}
+
+/* Extra precaution for very small screens */
+@media (max-width: 360px) {
+  .kpi-cards-container {
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+  
+  .kpi-card {
+    min-height: 90px;
+    margin-bottom: 0.25rem;
+  }
+  
+  .kpi-card .card-header {
+    padding: 0.375rem 0.5rem;
+  }
+  
+  .kpi-card .card-content {
+    padding: 0 0.5rem 0.5rem;
+  }
+  
+  .kpi-card .text-xl { font-size: 1.125rem; }
+  .kpi-card .text-sm { font-size: 0.7rem; }
+  .kpi-card .text-xs { font-size: 0.6rem; }
+}
