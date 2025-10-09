@@ -158,8 +158,20 @@ export default function Nav({ children }: NavProps) {
         <Link
           to="/"
           className="flex items-center space-x-3 nav-logo min-w-0 group"
-          onClick={closeMenu}
+          onClick={(e) => {
+            // If user Ctrl/Cmd+clicks the logo, toggle theme instead of navigating
+            // Allow normal click to navigate home
+            if (e.metaKey || e.ctrlKey) {
+              e.preventDefault();
+              toggleDarkMode();
+              // Close the mobile sheet if open
+              closeMenu();
+            } else {
+              closeMenu();
+            }
+          }}
           aria-label="SalesScope Home"
+          title="SalesScope - Ctrl/Cmd + Click to toggle theme"
         >
           <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
             <span className="text-white font-bold text-lg">S</span>
@@ -176,8 +188,7 @@ export default function Nav({ children }: NavProps) {
 
         {/* Right Controls */}
         <div className="flex items-center space-x-3 min-w-0">
-          {/* Desktop Theme Controls */}
-          <ThemeControls />
+          {/* Desktop Theme Controls intentionally hidden - theme toggle is concealed in the logo (Ctrl/Cmd+Click) */}
 
           {/* Mobile Menu Button */}
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>

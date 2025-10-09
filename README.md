@@ -59,7 +59,7 @@ It combines a **Python backend** (for generating and cleaning realistic sales da
 ### 1. Clone Repository
 ```bash
 git clone https://github.com/TADSTech/sales-scope.git
-cd salesscope
+cd sales-scope
 ````
 
 ### 2. Backend Setup (Python)
@@ -125,5 +125,5 @@ Feel free to fork, modify, and use for learning or production.
 
 ## 👤 Author
 
-Built by Michael — Math & Tech Enthusiast, University of Lagos.
+Built by Michael(TADS), Math & Tech Enthusiast, University of Lagos.
 Passionate about **data science, actuarial models, and full-stack apps**.
